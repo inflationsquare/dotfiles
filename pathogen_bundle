@@ -1,5 +1,7 @@
 base16-vim
+iceberg.vim
 jedi-vim
 lightline.vim
-surround
+nerdtree
 vim-gitgutter
+vim-surround
