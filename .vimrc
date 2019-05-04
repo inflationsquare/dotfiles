@@ -69,7 +69,6 @@ set textwidth=0
 set wrapmargin=0
 set wrap
 set linebreak
-set columns=120
 
 " colourscheme
 colorscheme iceberg
