@@ -3,7 +3,6 @@ execute pathogen#infect()
 
 " colours
 set background=dark
-colorscheme iceberg
 
 syntax on
 set termguicolors
@@ -11,6 +10,7 @@ set termguicolors
 highlight Visual cterm=bold ctermbg=Blue ctermfg=NONE
 
 set background=dark
+
 
 " search highlighting & turn off with space bar
 set hlsearch
@@ -71,5 +71,5 @@ set wrap
 set linebreak
 set columns=120
 
-" add fuzzyfinder to runtime path
-set rtp+=~/.fzf
+" colourscheme
+colorscheme iceberg
