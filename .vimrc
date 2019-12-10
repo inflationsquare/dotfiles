@@ -1,7 +1,31 @@
 " init package manager
 execute pathogen#infect()
 
-" colours
+" load vimrcs in working directory. For project specific config
+set exrc
+set secure
+
+""" nerd tree
+" Shortcut ctrl-n
+map <C-n> :NERDTreeToggle<CR>
+
+" open tree if vim opened without files specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" open tree if opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+" Close vim if the only window is a tree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" highlighting
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+""" colours
 set background=dark
 
 syntax on
@@ -10,7 +34,6 @@ set termguicolors
 highlight Visual cterm=bold ctermbg=Blue ctermfg=NONE
 
 set background=dark
-
 
 " search highlighting & turn off with space bar
 set hlsearch
@@ -71,4 +94,5 @@ set wrap
 set linebreak
 
 " colourscheme
-colorscheme iceberg
+set guifont=Fira\ Code:h12
+colorscheme darkside
