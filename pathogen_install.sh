@@ -22,3 +22,4 @@ git clone https://github.com/rainglow/vim.git ~/.vim/bundle/rainglow
 git clone https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git ~/.vim/bundle/vim-nerdtree-syntax-highlight
 git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
 git clone https://github.com/ryanoasis/vim-devicons.git ~/.vim/bundle/vim-devicons
+git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
