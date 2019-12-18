@@ -23,3 +23,6 @@ git clone https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git ~/.vim/
 git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
 git clone https://github.com/ryanoasis/vim-devicons.git ~/.vim/bundle/vim-devicons
 git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
+
+cp .ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
+

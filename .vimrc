@@ -35,6 +35,10 @@ highlight Visual cterm=bold ctermbg=Blue ctermfg=NONE
 
 set background=dark
 
+
+"YouCompleteMe global conf
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
 " search highlighting & turn off with space bar
 set hlsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
@@ -87,6 +91,18 @@ set number relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
+" different cursors in different modes
+if has("autocmd")
+  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
+  au InsertEnter,InsertChange *
+    \ if v:insertmode == 'i' |
+    \   silent execute '!echo -ne "\e[6 q"' | redraw! |
+    \ elseif v:insertmode == 'r' |
+    \   silent execute '!echo -ne "\e[4 q"' | redraw! |
+    \ endif
+  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+endif
+
 " wrapping
 set textwidth=0
 set wrapmargin=0
@@ -96,3 +112,7 @@ set linebreak
 " colourscheme
 set guifont=Fira\ Code:h12
 colorscheme darkside
+
+" Transparent background, doesn't work with blank files.
+"hi Normal guibg=NONE ctermbg=NONE
+"colorscheme juicy-contrast
