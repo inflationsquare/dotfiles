@@ -1,6 +1,6 @@
 " init package manager
 execute pathogen#infect()
-
+"
 " load vimrcs in working directory. For project specific config
 set exrc
 set secure
@@ -10,8 +10,8 @@ set secure
 map <C-n> :NERDTreeToggle<CR>
 
 " open tree if vim opened without files specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " open tree if opening a directory
 autocmd StdinReadPre * let s:std_in=1
@@ -35,9 +35,6 @@ highlight Visual cterm=bold ctermbg=Blue ctermfg=NONE
 
 set background=dark
 
-
-"YouCompleteMe global conf
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " search highlighting & turn off with space bar
 set hlsearch
@@ -111,7 +108,8 @@ set linebreak
 
 " colourscheme
 set guifont=Fira\ Code:h12
-colorscheme darkside
+" previously had iceberg
+colorscheme rebellion-contrast
 
 " Transparent background, doesn't work with blank files.
 "hi Normal guibg=NONE ctermbg=NONE
